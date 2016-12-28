@@ -8,6 +8,7 @@ public class PlayerTools : MonoBehaviour {
     public GameObject axe;
     public GameObject pickaxe;
     public GameObject antiGravTool;
+    public GameObject empty;
 
     // Config
     public bool canTool;
@@ -19,59 +20,35 @@ public class PlayerTools : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        EquipTool(empty);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //DEBUG
-        // Axe
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+            EquipTool(empty);
+
         if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            if (hasTool)
-            {
-                // Unequip
-                UnequipTool();
-            }
-            else
-            {
-                // Equip
-                EquipTool(axe);
-            }
-        }
+            EquipTool(axe);
+
         if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            if (hasTool)
-            {
-                // Unequip
-                UnequipTool();
-            }
-            else
-            {
-                // Equip
-                EquipTool(pickaxe);
-            }
-        }
+            EquipTool(pickaxe);
+
         if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            if (hasTool)
-            {
-                // Unequip
-                UnequipTool();
-            }
-            else
-            {
-                // Equip
-                EquipTool(antiGravTool);
-            }
-        }
+            EquipTool(antiGravTool);
+
     }
 
     // Specific functions
     public void EquipTool(GameObject tool)
     {
-        // First unequip our current tool
-        UnequipTool();
+        Debug.Log("Equip: " + tool.name);
+        if (hasTool)
+        {
+            // First unequip our current tool
+            UnequipTool();
+        }
         
         GameObject newTool = Instantiate(tool, transform.position + tool.transform.position, new Quaternion(0,0,0,0), transform);
         newTool.name = "Tool";
@@ -81,6 +58,7 @@ public class PlayerTools : MonoBehaviour {
 
     public void UnequipTool()
     {
+        Debug.Log("HasTool: " + hasTool);
         if (hasTool)
         {
             Destroy(transform.FindChild("Tool").gameObject);

@@ -15,9 +15,19 @@ public class Tool : MonoBehaviour {
 
             if (!hit)
                 return;
-            if (hit.parent)
-                if (hit.parent.GetComponent<ClickableObject>())
+            if (hit.GetComponent<IgnoreCollider>())
+                return;
+
+            while (hit.parent)
+            {
+                if (hit.parent.GetComponent<ClickableObject>()) 
+                {
                     hit = hit.parent;
+                    break;
+                }
+
+                hit = hit.parent;
+            }
 
             if (hit.GetComponent<ClickableObject>())
             {
@@ -33,9 +43,19 @@ public class Tool : MonoBehaviour {
 
             if (!hit)
                 return;
-            if (hit.parent)
+            if (hit.GetComponent<IgnoreCollider>())
+                return;
+
+            while (hit.parent)
+            {
                 if (hit.parent.GetComponent<ClickableObject>())
+                {
                     hit = hit.parent;
+                    break;
+                }
+
+                hit = hit.parent;
+            }
 
             if (hit.GetComponent<ClickableObject>())
             {

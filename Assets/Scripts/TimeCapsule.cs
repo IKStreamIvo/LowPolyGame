@@ -12,9 +12,17 @@ public class TimeCapsule : ClickableObject {
 
     public override void RClick(GameObject source)
     {
-        if (!open)
+        if (!open && !GetComponent<Animation>().isPlaying)
         {
-            gameObject.GetComponent<Animation>().Play("DoorOpens");
+            GetComponent<Animation>()["DoorOpens"].speed = 1;
+            GetComponent<Animation>().Play("DoorOpens");
+            open = !open;
+        }
+        else if(open && !GetComponent<Animation>().isPlaying)
+        {
+            GetComponent<Animation>()["DoorOpens"].speed = -1;
+            GetComponent<Animation>()["DoorOpens"].time = GetComponent<Animation>()["DoorOpens"].length;
+            GetComponent<Animation>().Play("DoorOpens");
             open = !open;
         }
     }

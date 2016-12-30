@@ -21,14 +21,17 @@ public class Tree : ClickableObject {
         {
             if (normalTree && canBreak)
                 ModifyHealth(5f);
-            else if (brokenTree && canBreak)
-                RemoveLeaves();
         }
     }
 
     public override void RClick(GameObject source)
     {
-        Debug.Log("1");
+        // Check if holds the required tool.
+        if (HasRequiredTool(source))
+        {
+            if (brokenTree && canBreak)
+                RemoveLeaves();
+        }
     }
 
 
@@ -51,13 +54,19 @@ public class Tree : ClickableObject {
 
     // Specific functions
     public float fallForce = 60f;
+
     public void Break()
     {
-        //fallForce = fallForce * transform.lossyScale.y;
+        fallForce = fallForce * transform.localScale.y;
+
+        
 
         // Spawn the two parts of the tree
         GameObject stump = (GameObject)Instantiate(stumpPrefab, transform.position, Quaternion.identity);
         GameObject broken = (GameObject)Instantiate(brokenTreePrefab, stump.transform.position + new Vector3(brokenTreePrefab.transform.position.x, brokenTreePrefab.transform.position.y * transform.lossyScale.y, brokenTreePrefab.transform.position.z), Quaternion.identity);
+
+        stump.transform.localScale = new Vector3(stumpPrefab.transform.localScale.x * transform.lossyScale.x, stumpPrefab.transform.localScale.y * transform.lossyScale.y, stumpPrefab.transform.localScale.z * transform.lossyScale.z);
+        broken.transform.localScale = new Vector3(brokenTreePrefab.transform.localScale.x * transform.lossyScale.x, brokenTreePrefab.transform.localScale.y * transform.lossyScale.y, brokenTreePrefab.transform.localScale.z * transform.lossyScale.z);
 
         // Make the tree part fall
         broken.GetComponent<Rigidbody>().AddForce(transform.forward * fallForce);

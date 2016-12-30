@@ -16,6 +16,7 @@ public class PlayerTools : MonoBehaviour {
 
     // Runtime stuff
     public bool hasTool;
+    private bool allowedToolSwitch;
 
 
 	// Use this for initialization
@@ -26,17 +27,17 @@ public class PlayerTools : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //DEBUG
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-            EquipTool(empty);
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+                EquipTool(empty);
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-            EquipTool(axe);
+            else if (Input.GetKeyDown(KeyCode.Keypad1))
+                EquipTool(axe);
 
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-            EquipTool(pickaxe);
+           else if (Input.GetKeyDown(KeyCode.Keypad2))
+                EquipTool(pickaxe);
 
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-            EquipTool(antiGravTool);
+            else if (Input.GetKeyDown(KeyCode.Keypad3))
+                EquipTool(antiGravTool);
 
     }
 
@@ -44,12 +45,15 @@ public class PlayerTools : MonoBehaviour {
     public void EquipTool(GameObject tool)
     {
         Debug.Log("Equip: " + tool.name);
+
+        allowedToolSwitch = false;
+
         if (hasTool)
         {
             // First unequip our current tool
             UnequipTool();
         }
-        
+
         GameObject newTool = Instantiate(tool, transform.position + tool.transform.position, new Quaternion(0,0,0,0), transform);
         newTool.name = "Tool";
 
@@ -59,6 +63,7 @@ public class PlayerTools : MonoBehaviour {
     public void UnequipTool()
     {
         Debug.Log("HasTool: " + hasTool);
+        
         if (hasTool)
         {
             Destroy(transform.FindChild("Tool").gameObject);

@@ -18,15 +18,18 @@ public class Tool : MonoBehaviour {
             if (hit.GetComponent<IgnoreCollider>())
                 return;
 
-            while (hit.parent)
+            if (!hit.GetComponent<ClickableObject>())
             {
-                if (hit.parent.GetComponent<ClickableObject>()) 
+                while (hit.parent)
                 {
-                    hit = hit.parent;
-                    break;
-                }
+                    if (hit.parent.GetComponent<ClickableObject>())
+                    {
+                        hit = hit.parent;
+                        break;
+                    }
 
-                hit = hit.parent;
+                    hit = hit.parent;
+                }
             }
 
             if (hit.GetComponent<ClickableObject>())

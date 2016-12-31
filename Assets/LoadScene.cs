@@ -1,8 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Main : MonoBehaviour {
+public class LoadScene : MonoBehaviour {
+    
+    public void StartScene(string scene)
+    {
+        StartCoroutine(ChangeLevel(scene));
+    }
 
+	public IEnumerator ChangeLevel(string scene)
+    {
+        float fadeTime = BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
+        Application.LoadLevel(scene);
+    }
+
+
+    // Fading
     public Texture2D fadeOutTexture;    // the texture that will overlay the screen. This can be a black image or a loading graphic
     public float fadeSpeed = 0.8f;      // the fading speed
 

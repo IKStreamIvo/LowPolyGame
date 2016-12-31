@@ -20,7 +20,7 @@ public class Tree : ClickableObject {
         if (HasRequiredTool(source))
         {
             if (normalTree && canBreak)
-                ModifyHealth(5f);
+                ModifyHealth(5f, source);
         }
     }
 
@@ -41,26 +41,24 @@ public class Tree : ClickableObject {
 
     // Health Managers
     // Use negative damage to add more health
-    public void ModifyHealth(float damage)
+    public void ModifyHealth(float damage, GameObject source)
     {
         if (health - damage > 0f)
             health = health - damage;
         else
         {
             health = health - damage;
-            Break();
+            Break(source);
         }
     }
 
     // Specific functions
     public float fallForce = 60f;
 
-    public void Break()
+    public void Break(GameObject source)
     {
         fallForce = fallForce * transform.localScale.y;
-
         
-
         // Spawn the two parts of the tree
         GameObject stump = (GameObject)Instantiate(stumpPrefab, transform.position, Quaternion.identity);
         GameObject broken = (GameObject)Instantiate(brokenTreePrefab, stump.transform.position + new Vector3(brokenTreePrefab.transform.position.x, brokenTreePrefab.transform.position.y * transform.lossyScale.y, brokenTreePrefab.transform.position.z), Quaternion.identity);
@@ -69,7 +67,7 @@ public class Tree : ClickableObject {
         broken.transform.localScale = new Vector3(brokenTreePrefab.transform.localScale.x * transform.lossyScale.x, brokenTreePrefab.transform.localScale.y * transform.lossyScale.y, brokenTreePrefab.transform.localScale.z * transform.lossyScale.z);
 
         // Make the tree part fall
-        broken.GetComponent<Rigidbody>().AddForce(transform.forward * fallForce);
+        broken.GetComponent<Rigidbody>().AddForce(source.transform.forward * fallForce);
 
         // Delete the old tree
         Destroy(gameObject);
@@ -79,5 +77,6 @@ public class Tree : ClickableObject {
     {
         GameObject leaves = transform.FindChild("Leaves").gameObject;
         Destroy(leaves);
+        canPickedUp = true;
     }
 }

@@ -5,13 +5,14 @@ using UnityEngine;
 public class Tool : MonoBehaviour {
 
     public string toolType;
+    public bool swingAnim;
     // public float durability;
 
     public virtual void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Transform hit = castRay(10f);
+            Transform hit = castRay(5f);
 
             if (!hit)
                 return;
@@ -42,7 +43,7 @@ public class Tool : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire2"))
         {
-            Transform hit = castRay(10f);
+            Transform hit = castRay(5f);
 
             if (!hit)
                 return;
@@ -74,10 +75,17 @@ public class Tool : MonoBehaviour {
         RaycastHit hit;
         Ray ray = transform.parent.parent.FindChild("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 15f))
-        {
-            return hit.transform;
+        if (GetComponent<Animation>()) {
+            if (!GetComponent<Animation>().isPlaying) {
+                if (swingAnim)
+                    GetComponent<Animation>().Play("ToolSwing");
+            }
+            else
+                return null;
         }
+
+        if (Physics.Raycast(ray, out hit, dist))
+            return hit.transform;
         else
             return null;
     }

@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 62b337a45ea4d274089ff89f585f6d82
-timeCreated: 1483195470
+guid: 3e753a8121ad86a43aa3af294bb8a38c
+timeCreated: 1483195479
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: MolecularSmelter
-    100004: MolecularSmelterScreen
     400000: //RootNode
-    400002: MolecularSmelter
-    400004: MolecularSmelterScreen
-    2300000: MolecularSmelter
-    2300002: MolecularSmelterScreen
-    3300000: MolecularSmelter
-    3300002: MolecularSmelterScreen
-    4300000: MolecularSmelterScreen
-    4300002: MolecularSmelter
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Iron
     7400000: Default Take
     9500000: //RootNode
   materials:

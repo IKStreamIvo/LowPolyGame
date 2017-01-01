@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class MolecularSmelter : WorldObject {
 
+    // Default stuff
     private SmelterDoor door;
-
     void Start ()
     {
-        door = transform.FindChild("Door").GetComponent<SmelterDoor>();
+        door = transform.FindChild("Armature").GetComponent<SmelterDoor>();
     }
 
+    // Click Managers
+    public override void RClick(GameObject source)
+    {
+        if (door.open)
+        {
+            // Play blocked-sound?
+            return;
+        }
+        else
+        {
+            Smelt();
+        }
+    }
 
+    // Smelting
     private List<GameObject> smeltables;
     private List<GameObject> unsmeltables;
 
@@ -25,23 +39,8 @@ public class MolecularSmelter : WorldObject {
         smeltables.Remove(obj.gameObject);
     }
 
-
-    public override void RClick(GameObject source)
-    {
-        if (door.open)
-        {
-            // Play blocked-sound?
-            return;
-        }
-        else
-        {
-
-        }
-    }
-
     void Smelt()
     {
 
     }
-
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crystal : ClickableObject {
+public class Crystal : WorldObject {
 
     public Vector3 collisionPoint;
 	

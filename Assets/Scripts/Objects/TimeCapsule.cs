@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeCapsule : ClickableObject {
+public class TimeCapsule : WorldObject {
 
     private bool open = false;
 

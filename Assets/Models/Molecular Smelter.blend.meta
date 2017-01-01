@@ -39,6 +39,8 @@ ModelImporter:
     100062: ProcessBar3
     100064: ProcessBar4
     100066: ProcessBarFrame
+    100068: MolecularSmelterDoorWindow
+    100070: MolecularSmelterDoorWindow2
     400000: Armature
     400002: Bone
     400004: DoorBone
@@ -73,6 +75,8 @@ ModelImporter:
     400062: ProcessBar3
     400064: ProcessBar4
     400066: ProcessBarFrame
+    400068: MolecularSmelterDoorWindow
+    400070: MolecularSmelterDoorWindow2
     2300000: Cube
     2300002: MolecularSmelter_005
     2300004: Cube_001
@@ -131,6 +135,8 @@ ModelImporter:
     4300054: ProcessBarFrame
     4300056: ButtonFrame
     4300058: BigScreenFrame
+    4300060: MolecularSmelterDoorWindow
+    4300062: MolecularSmelterDoorWindow2
     7400000: Default Take
     7400002: DoorOpen
     9500000: //RootNode
@@ -152,6 +158,8 @@ ModelImporter:
     13700028: DoorPillars
     13700030: ScreenHolders
     13700032: BigScreenFrame
+    13700034: MolecularSmelterDoorWindow
+    13700036: MolecularSmelterDoorWindow2
   materials:
     importMaterials: 1
     materialName: 0

@@ -21,6 +21,24 @@ ModelImporter:
     100026: MolecularSmelter_012
     100028: MolecularSmelter_013
     100030: MolecularSmelter_door
+    100032: BigScreen
+    100034: ComputerScreen
+    100036: Cube
+    100038: DoorPillars
+    100040: ScreenHolders
+    100042: Cube_001
+    100044: Cube_002
+    100046: NameTag
+    100048: OffButton
+    100050: OnButton
+    100052: BigScreenFrame
+    100054: ButtonFrame
+    100056: NameTag_001
+    100058: ProcessBar1
+    100060: ProcessBar2
+    100062: ProcessBar3
+    100064: ProcessBar4
+    100066: ProcessBarFrame
     400000: Armature
     400002: Bone
     400004: DoorBone
@@ -37,6 +55,52 @@ ModelImporter:
     400026: MolecularSmelter_012
     400028: MolecularSmelter_013
     400030: MolecularSmelter_door
+    400032: BigScreen
+    400034: ComputerScreen
+    400036: Cube
+    400038: DoorPillars
+    400040: ScreenHolders
+    400042: Cube_001
+    400044: Cube_002
+    400046: NameTag
+    400048: OffButton
+    400050: OnButton
+    400052: BigScreenFrame
+    400054: ButtonFrame
+    400056: NameTag_001
+    400058: ProcessBar1
+    400060: ProcessBar2
+    400062: ProcessBar3
+    400064: ProcessBar4
+    400066: ProcessBarFrame
+    2300000: Cube
+    2300002: MolecularSmelter_005
+    2300004: Cube_001
+    2300006: Cube_002
+    2300008: NameTag
+    2300010: OffButton
+    2300012: OnButton
+    2300014: ButtonFrame
+    2300016: NameTag_001
+    2300018: ProcessBar1
+    2300020: ProcessBar2
+    2300022: ProcessBar3
+    2300024: ProcessBar4
+    2300026: ProcessBarFrame
+    3300000: Cube
+    3300002: MolecularSmelter_005
+    3300004: Cube_001
+    3300006: Cube_002
+    3300008: NameTag
+    3300010: OffButton
+    3300012: OnButton
+    3300014: ButtonFrame
+    3300016: NameTag_001
+    3300018: ProcessBar1
+    3300020: ProcessBar2
+    3300022: ProcessBar3
+    3300024: ProcessBar4
+    3300026: ProcessBarFrame
     4300000: MolecularSmelter_door
     4300002: MolecularSmelter_005
     4300004: MolecularSmelter_004
@@ -49,6 +113,24 @@ ModelImporter:
     4300018: MolecularSmelter_009
     4300020: MolecularSmelter_008
     4300022: MolecularSmelter
+    4300024: Cube
+    4300026: ComputerScreen
+    4300028: BigScreen
+    4300030: DoorPillars
+    4300032: ScreenHolders
+    4300034: Cube_002
+    4300036: Cube_001
+    4300038: NameTag
+    4300040: OffButton
+    4300042: OnButton
+    4300044: NameTag_001
+    4300046: ProcessBar4
+    4300048: ProcessBar3
+    4300050: ProcessBar2
+    4300052: ProcessBar1
+    4300054: ProcessBarFrame
+    4300056: ButtonFrame
+    4300058: BigScreenFrame
     7400000: Default Take
     7400002: DoorOpen
     9500000: //RootNode
@@ -65,6 +147,11 @@ ModelImporter:
     13700018: MolecularSmelter_012
     13700020: MolecularSmelter_013
     13700022: MolecularSmelter_door
+    13700024: BigScreen
+    13700026: ComputerScreen
+    13700028: DoorPillars
+    13700030: ScreenHolders
+    13700032: BigScreenFrame
   materials:
     importMaterials: 1
     materialName: 0

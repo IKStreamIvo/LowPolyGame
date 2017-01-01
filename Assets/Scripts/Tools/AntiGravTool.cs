@@ -18,12 +18,12 @@ public class AntiGravTool : Tool {
             if (!hit)
                 return;
             if (hit.parent)
-                if (hit.parent.GetComponent<ClickableObject>())
+                if (hit.parent.GetComponent<WorldObject>())
                     hit = hit.parent;
 
-            if (hit.GetComponent<ClickableObject>())
+            if (hit.GetComponent<WorldObject>())
             {
-                if (hit.GetComponent<ClickableObject>().canPickedUp)
+                if (hit.GetComponent<WorldObject>().canPickedUp)
                 {
                     // ANTIGRAV :D
                     _mouseState = true;

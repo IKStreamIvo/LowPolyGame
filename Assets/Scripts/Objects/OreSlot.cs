@@ -33,7 +33,7 @@ public class OreSlot : MonoBehaviour {
             transform.parent.parent.GetComponent<OreRock>().possibleSlots.Remove(gameObject);
 
             // Free the ore!
-            ore.GetComponent<ClickableObject>().canPickedUp = true;
+            ore.GetComponent<WorldObject>().canPickedUp = true;
             // Turn the mesh of the rock off
             StartCoroutine(ColliderWait(.25f));
 

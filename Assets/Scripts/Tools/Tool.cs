@@ -19,11 +19,11 @@ public class Tool : MonoBehaviour {
             if (hit.GetComponent<IgnoreCollider>())
                 return;
 
-            if (!hit.GetComponent<ClickableObject>())
+            if (!hit.GetComponent<WorldObject>())
             {
                 while (hit.parent)
                 {
-                    if (hit.parent.GetComponent<ClickableObject>())
+                    if (hit.parent.GetComponent<WorldObject>())
                     {
                         hit = hit.parent;
                         break;
@@ -33,11 +33,11 @@ public class Tool : MonoBehaviour {
                 }
             }
 
-            if (hit.GetComponent<ClickableObject>())
+            if (hit.GetComponent<WorldObject>())
             {
                 Debug.Log("LClick: " + hit.name);
 
-                hit.GetComponent<ClickableObject>().LClick(transform.parent.parent.gameObject);
+                hit.GetComponent<WorldObject>().LClick(transform.parent.parent.gameObject);
             }
         }
 
@@ -50,11 +50,11 @@ public class Tool : MonoBehaviour {
             if (hit.GetComponent<IgnoreCollider>())
                 return;
 
-            if (!hit.GetComponent<ClickableObject>())
+            if (!hit.GetComponent<WorldObject>())
             {
                 while (hit.parent)
                 {
-                    if (hit.parent.GetComponent<ClickableObject>())
+                    if (hit.parent.GetComponent<WorldObject>())
                     {
                         hit = hit.parent;
                         break;
@@ -64,11 +64,11 @@ public class Tool : MonoBehaviour {
                 }
             }
 
-            if (hit.GetComponent<ClickableObject>())
+            if (hit.GetComponent<WorldObject>())
             {
                 Debug.Log("RClick: " + hit.name);
 
-                hit.GetComponent<ClickableObject>().RClick(transform.parent.parent.gameObject);
+                hit.GetComponent<WorldObject>().RClick(transform.parent.parent.gameObject);
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OreRock : ClickableObject {
+public class OreRock : WorldObject {
     
     // Config
     public GameObject[] oreParts;

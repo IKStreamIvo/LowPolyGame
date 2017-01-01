@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : ClickableObject {
+public class Tree : WorldObject {
 
     // Config
     public bool normalTree;

@@ -5,20 +5,26 @@ using UnityEngine;
 public class SmelterDoor : WorldObject {
 
     public bool open = false;
+    private GameObject smelter;
     
+    void Start()
+    {
+        smelter = transform.parent.gameObject;
+    }
+
     public override void RClick(GameObject source)
     {
-        if (!open && !transform.parent.GetComponent<Animation>().isPlaying)
+        if (!open && !smelter.GetComponent<Animation>().isPlaying)
         {
-            transform.parent.GetComponent<Animation>()["DoorOpen"].speed = 1;
-            transform.parent.GetComponent<Animation>().Play("DoorOpen");
+            smelter.GetComponent<Animation>()["DoorOpen"].speed = 1;
+            smelter.GetComponent<Animation>().Play("DoorOpen");
             open = !open;
         }
-        else if (open && !transform.parent.GetComponent<Animation>().isPlaying)
+        else if (open && !smelter.GetComponent<Animation>().isPlaying)
         {
-            transform.parent.GetComponent<Animation>()["DoorOpen"].speed = -1;
-            transform.parent.GetComponent<Animation>()["DoorOpen"].time = transform.parent.GetComponent<Animation>()["DoorOpen"].length;
-            transform.parent.GetComponent<Animation>().Play("DoorOpen");
+            smelter.GetComponent<Animation>()["DoorOpen"].speed = -1;
+            smelter.GetComponent<Animation>()["DoorOpen"].time = smelter.GetComponent<Animation>()["DoorOpen"].length;
+            smelter.GetComponent<Animation>().Play("DoorOpen");
             open = !open;
         }
     }

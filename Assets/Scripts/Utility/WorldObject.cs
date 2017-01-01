@@ -8,16 +8,19 @@ public class WorldObject : MonoBehaviour {
     public bool canBreak;
     public List<string> acceptedTools;
     public bool canPickedUp;
+
+    // Resources
+    public bool smeltable;
+    public GameObject smeltedForm;
     
     // Click managers
     public virtual void LClick(GameObject source)
     {
-        Debug.Log("Wrong script got called :?");
+        
     }
 
     public virtual void RClick(GameObject source)
     {
-        Debug.Log("Wrong script got called :?");
 
     }
 

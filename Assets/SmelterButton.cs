@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SmelterButton : WorldObject {
 
+    public bool onbutton;
+    public bool ejectbutton;
+
     private MolecularSmelter smelter;
 
 	// Use this for initialization
@@ -13,6 +16,9 @@ public class SmelterButton : WorldObject {
 
     public override void RClick(GameObject source)
     {
-        smelter.Activate();
+        if (onbutton)
+            smelter.Activate();
+        else if (ejectbutton)
+            StartCoroutine(smelter.Eject());
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MolecularSmelter : WorldObject {
 
     // Default stuff
-    private SmelterDoor door;
+    public SmelterDoor door;
     void Start ()
     {
         door = gameObject.transform.FindChild("Armature").GetComponent<SmelterDoor>();
@@ -57,6 +57,8 @@ public class MolecularSmelter : WorldObject {
 
     void OnTriggerExit(Collider coll)
     {
+        //if (ejecting)
+            //return;
         Transform obj = coll.transform;
 
         if (!obj.GetComponent<WorldObject>())
@@ -82,11 +84,38 @@ public class MolecularSmelter : WorldObject {
     public void Activate()
     {
         Debug.Log("Smelt!");
+        door.locked = true;
         foreach (GameObject ore in smeltables)
         {
-            //smeltables.Remove(ore);
-            GameObject ingot = (GameObject)Instantiate(ore.GetComponent<WorldObject>().smeltedForm, ore.transform.position + new Vector3(0, .5f, 0), Quaternion.identity);
+            GameObject ingot = (GameObject)Instantiate(ore.GetComponent<WorldObject>().smeltedForm, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(ore);
         }
+        smeltables.Clear();
+        door.locked = false;
+    }
+
+    public bool ejecting;
+    public IEnumerator Eject()
+    {
+        //ejecting = true;
+        door.ToggleDoor();
+        // Wait for the door to be opened
+        float time = GetComponent<Animation>()["DoorOpen"].length;
+        yield return new WaitForSeconds(time);
+        
+        // Eject!
+        while(unsmeltables.Count != 0)
+        {
+            Transform proj = unsmeltables[Random.Range(0, unsmeltables.Count)].transform;
+            proj.LookAt(transform.FindChild("ShootLoc"));
+            float force = 500f * proj.GetComponent<Rigidbody>().mass;
+            proj.GetComponent<Rigidbody>().AddForce(proj.forward * force);
+
+            yield return new WaitForSeconds(1f);
+        }
+
+        door.ToggleDoor();
+        //unsmeltables.Clear();
+        //ejecting = false;
     }
 }

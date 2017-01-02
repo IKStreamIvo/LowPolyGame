@@ -52,4 +52,9 @@ public class WorldObject : MonoBehaviour {
         // If everything fails...
         return false;
     }
+
+    public IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
 }

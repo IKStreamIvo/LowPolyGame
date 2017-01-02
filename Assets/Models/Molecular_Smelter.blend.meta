@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 4a4230d0777843e4f8049cd8300b3542
+timeCreated: 1483379039
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BigScreenFrame
+    100004: Bone
+    100006: ButtonFrame
+    100008: ComputerScreen
+    100010: DoorBone
+    100012: DoorPillars
+    100014: //RootNode
+    100016: MolecularSmelter
+    100018: MolecularSmelter_001
+    100020: MolecularSmelter_005
+    100022: MolecularSmelter_door
+    100024: MolecularSmelterDoorWindow
+    100026: MolecularSmelterDoorWindow2
+    100028: NameTag
+    100030: NameTag_001
+    100032: OffButton
+    100034: OnButton
+    100036: ProcessBar1
+    100038: ProcessBar2
+    100040: ProcessBar3
+    100042: ProcessBar4
+    100044: ProcessBarFrame
+    100046: ScreenHolders
+    400000: Armature
+    400002: BigScreenFrame
+    400004: Bone
+    400006: ButtonFrame
+    400008: ComputerScreen
+    400010: DoorBone
+    400012: DoorPillars
+    400014: //RootNode
+    400016: MolecularSmelter
+    400018: MolecularSmelter_001
+    400020: MolecularSmelter_005
+    400022: MolecularSmelter_door
+    400024: MolecularSmelterDoorWindow
+    400026: MolecularSmelterDoorWindow2
+    400028: NameTag
+    400030: NameTag_001
+    400032: OffButton
+    400034: OnButton
+    400036: ProcessBar1
+    400038: ProcessBar2
+    400040: ProcessBar3
+    400042: ProcessBar4
+    400044: ProcessBarFrame
+    400046: ScreenHolders
+    2300000: ButtonFrame
+    2300002: MolecularSmelter_005
+    2300004: NameTag
+    2300006: NameTag_001
+    2300008: OffButton
+    2300010: OnButton
+    2300012: ProcessBar1
+    2300014: ProcessBar2
+    2300016: ProcessBar3
+    2300018: ProcessBar4
+    2300020: ProcessBarFrame
+    3300000: ButtonFrame
+    3300002: MolecularSmelter_005
+    3300004: NameTag
+    3300006: NameTag_001
+    3300008: OffButton
+    3300010: OnButton
+    3300012: ProcessBar1
+    3300014: ProcessBar2
+    3300016: ProcessBar3
+    3300018: ProcessBar4
+    3300020: ProcessBarFrame
+    4300000: NameTag_001
+    4300002: ProcessBar4
+    4300004: ProcessBar3
+    4300006: ProcessBar2
+    4300008: ProcessBar1
+    4300010: ProcessBarFrame
+    4300012: ButtonFrame
+    4300014: NameTag
+    4300016: OffButton
+    4300018: OnButton
+    4300020: MolecularSmelterDoorWindow2
+    4300022: MolecularSmelterDoorWindow
+    4300024: MolecularSmelter_door
+    4300026: MolecularSmelter_005
+    4300028: MolecularSmelter_001
+    4300030: ComputerScreen
+    4300032: BigScreenFrame
+    4300034: DoorPillars
+    4300036: ScreenHolders
+    4300038: MolecularSmelter
+    7400000: Default Take
+    7400002: DoorOpen
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: BigScreenFrame
+    13700002: ComputerScreen
+    13700004: DoorPillars
+    13700006: MolecularSmelter
+    13700008: MolecularSmelter_001
+    13700010: MolecularSmelter_door
+    13700012: MolecularSmelterDoorWindow
+    13700014: MolecularSmelterDoorWindow2
+    13700016: ScreenHolders
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

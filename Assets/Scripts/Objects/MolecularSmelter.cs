@@ -89,6 +89,7 @@ public class MolecularSmelter : WorldObject {
         {
             GameObject ingot = (GameObject)Instantiate(ore.GetComponent<WorldObject>().smeltedForm, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(ore);
+
         }
         smeltables.Clear();
         door.locked = false;

@@ -8,12 +8,13 @@ public class MolecularSmelter : WorldObject {
     private SmelterDoor door;
     void Start ()
     {
-        door = transform.FindChild("Armature").GetComponent<SmelterDoor>();
+        door = gameObject.transform.FindChild("Armature").GetComponent<SmelterDoor>();
     }
 
     // Click Managers
     public override void RClick(GameObject source)
     {
+        Debug.Log(door.open);
         if (door.open)
         {
             // Play blocked-sound?

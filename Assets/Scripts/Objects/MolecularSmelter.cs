@@ -22,8 +22,8 @@ public class MolecularSmelter : WorldObject {
         }
         else
         {
-            Debug.Log("Smelt!");
-            Smelt();
+            //Debug.Log("Smelt!");
+            //Smelt();
         }
     }
 
@@ -79,8 +79,9 @@ public class MolecularSmelter : WorldObject {
             unsmeltables.Remove(obj.gameObject);
     }
 
-    void Smelt()
+    public void Activate()
     {
+        Debug.Log("Smelt!");
         foreach (GameObject ore in smeltables)
         {
             //smeltables.Remove(ore);

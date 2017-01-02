@@ -8,6 +8,6 @@ public class SmelterScreen : MonoBehaviour {
         screen.Create();
         Camera cam = transform.parent.FindChild("ScreenCam").GetComponent<Camera>();
         cam.targetTexture = screen;
-        GetComponent<MeshRenderer>().materials[0].mainTexture = screen;
+        GetComponent<MeshRenderer>().material.mainTexture = screen;
 	}
 }

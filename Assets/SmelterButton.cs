@@ -17,7 +17,7 @@ public class SmelterButton : WorldObject {
     public override void RClick(GameObject source)
     {
         if (onbutton)
-            smelter.Activate();
+            StartCoroutine(smelter.Activate());
         else if (ejectbutton)
             StartCoroutine(smelter.Eject());
     }
